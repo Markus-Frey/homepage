@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+<title>Privater Bereich</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    text-align:center;
+    padding:50px;
+}
+
+.box {
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+input {
+    padding:10px;
+    width:200px;
+}
+
+button {
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#inhalt {
+    display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="box">
+
+<h1>Privater Bereich</h1>
+
+<div id="login">
+
+<p>Bitte Passwort eingeben:</p>
+
+<input type="password" id="passwort">
+
+<br><br>
+
+<button onclick="pruefen()">Anmelden</button>
+
+<p id="meldung"></p>
+
+</div>
+
+
+<div id="inhalt">
+
+<h2>Willkommen!</h2>
+
+<p>
+Hier können private Bilder, Dateien oder Informationen stehen.
+</p>
+
+<p>
+<a href="datei.pdf">Meine Datei öffnen</a>
+</p>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function pruefen(){
+
+let passwort = document.getElementById("passwort").value;
+
+if(passwort === "budo"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("inhalt").style.display="block";
+
+}
+
+else {
+
+document.getElementById("meldung").innerHTML =
+"Falsches Passwort";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
